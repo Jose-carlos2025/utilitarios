@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria de Fotos - São Tomé e Príncipe</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            background-image: url('https://cdn.pixabay.com/photo/2021/09/01/12/00/s%C3%A3o-tom%C3%A9-e-pr%C3%ADncipe-644.gif');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c5530;
+            margin: 30px 0;
+            font-size: 2.5em;
+        }
+
+        .descricao {
+            text-align: center;
+            color: #444;
+            margin-bottom: 30px;
+        }
+
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .foto-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            background-color: #fff;
+        }
+
+        .foto-item:hover {
+            transform: scale(1.03);
+        }
+
+        .foto-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .foto-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .foto-item:hover .foto-overlay {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Maravilhas de São Tomé e Príncipe</h1>
+        <p class="descricao">Uma viagem visual pelas belezas naturais e culturais do paraíso africano</p>
+        <div class="galeria">
+            <div class="foto-item">
+                <img src="data:image/jpeg;base64,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" alt="Praia Jalé">
+                <div class="foto-overlay">
+                    <h3>Praia Jalé</h3>
+                    <p>Uma das praias mais paradisíacas do sul de São Tomé</p>
+                </div>
+            </div>
+            
+            <div class="foto-item">
+                <img src="https://images.unsplash.com/photo-1580060839061-8f116b3b3b3f" alt="Pico Cão Grande">
+                <div class="foto-overlay">
+                    <h3>Pico Cão Grande</h3>
+                    <p>Formação rochosa icônica que se eleva a 663 metros de altura</p>
+                </div>
+            </div>
+
+            <div class="foto-item">
+                <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99" alt="Roça São João">
+                <div class="foto-overlay">
+                    <h3>Roça São João dos Angolares</h3>
+                    <p>Antiga plantação colonial transformada em hotel e restaurante</p>
+                </div>
+            </div>
+
+            <div class="foto-item">
+                <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99" alt="Mercado Municipal">
+                <div class="foto-overlay">
+                    <h3>Mercado Municipal</h3>
+                    <p>Centro da vida comercial e cultural da cidade de São Tomé</p>
+                </div>
+            </div>
+
+            <div class="foto-item">
+                <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99" alt="Ilha do Príncipe">
+                <div class="foto-overlay">
+                    <h3>Ilha do Príncipe</h3>
+                    <p>Reserva da Biosfera da UNESCO com paisagens deslumbrantes</p>
+                </div>
+            </div>
+
+            <div class="foto-item">
+                <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99" alt="Cascata São Nicolau">
+                <div class="foto-overlay">
+                    <h3>Cascata São Nicolau</h3>
+                    <p>Uma das mais belas quedas d'água do arquipélago</p>
+                </div>
+            </div>
+
+            <div class="foto-item">
+                <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99" alt="Forte de São Sebastião">
+                <div class="foto-overlay">
+                    <h3>Forte de São Sebastião</h3>
+                    <p>Construção histórica do século XVI que abriga o Museu Nacional</p>
+                </div>
+            </div>
+
+            <div class="foto-item">
+                <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99" alt="Plantação de Cacau">
+                <div class="foto-overlay">
+                    <h3>Plantação de Cacau</h3>
+                    <p>Símbolo da rica história agrícola de São Tomé e Príncipe</p>
+                </div>
+            </div>
+
+            <div class="foto-item">
+                <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99" alt="Baía das Agulhas">
+                <div class="foto-overlay">
+                    <h3>Baía das Agulhas</h3>
+                    <p>Local de rara beleza com formações rochosas únicas</p>
+                </div>
+            </div>
+
+            <div class="foto-item">
+                <img src="https://images.unsplash.com/photo-1580060839134-75a5edca2e99" alt="Igreja da Sé">
+                <div class="foto-overlay">
+                    <h3>Catedral de São Tomé</h3>
+                    <p>Principal igreja católica do país, construída no 
