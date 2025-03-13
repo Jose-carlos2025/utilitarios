@@ -1,0 +1,155 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo base do corpo */
+body {
+    background-image: url('https://i.gifer.com/2r6D.gif');
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: #f5f1f1;
+    line-height: 1.6;
+}
+
+/* Overlay para destacar a imagem de fundo */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+/* Container principal */
+.container {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7);
+    border: 5px solid #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+/* Cabeçalho */
+header {
+    text-align: center;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+/* Estilo para o título principal */
+h1 {
+    font-size: 4rem;
+    background: linear-gradient(90deg, #ff5f6d, #ffc371, #00ff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+/* Estilo para o grid de seções */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* Estilo para as seções */
+section {
+    flex: 0 0 48%;
+    margin-bottom: 20px;
+    padding: 1rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilo para os subtítulos */
+h2 {
+    font-size: 2rem;
+    background: linear-gradient(90deg, #6a11cb, #2575fc, #00ff00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+/* Estilo para parágrafos e listas */
+p, li {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* Estilo para as listas */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Destaque em itens importantes */
+li strong {
+    color: #ff6347;
+    font-weight: bold;
+}
+
+/* Animações para fade-in nas listas e subtítulos */
+h2, li, p {
+    opacity: 1;
+    animation: none;
+}
+
+h2:nth-child(odd), li:nth-child(odd) {
+    animation-delay: 0.5s;
+}
+
+h2:nth-child(even), li:nth-child(even) {
+    animation-delay: 1s;
+}
+
+/* Adicione esta animação ao seu CSS existente */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ajuste para listas aninhadas */
+li ul li {
+    opacity: 1;
+    animation: none;
+    font-size: 1.2rem;
+    padding-left: 20px;
+}
+
+li ul li::before {
+    content: '•';
+    font-size: 1.2rem;
+}
