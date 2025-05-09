@@ -207,7 +207,7 @@ h2:nth-child(even), li:nth-child(even) {
     }
 }
 
-/* Adicione esta animação ao seu CSS existente */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -219,7 +219,7 @@ h2:nth-child(even), li:nth-child(even) {
     }
 }
 
-/* Ajuste para listas aninhadas */
+
 li ul li {
     opacity: 1;
     animation: none;
